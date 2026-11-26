@@ -1,0 +1,56 @@
+backend:
+  name: github
+  repo: olubodunvictor-cmd/fluent-voice-website
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "fluent-voice"
+    label: "Fluent Voice Lessons"
+    folder: "src/content/fluent-voice"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
+      - { label: "Topic / Accent Tag", name: "moduleTag", widget: "string", default: "Pronunciation" }
+      - { label: "Free Guide Link (Optional)", name: "worksheetUrl", widget: "string", required: false }
+      - { label: "Publish Date", name: "publishedDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Lesson Notes", name: "body", widget: "markdown" }
+
+  - name: "play-sounds"
+    label: "Play Sounds With Imelda (Kids)"
+    folder: "src/content/play-sounds"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Lesson Title", name: "title", widget: "string" }
+      - { label: "Short Summary", name: "description", widget: "text" }
+      - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
+      - { label: "Phonics Rule / Vowel", name: "moduleTag", widget: "string", default: "Short /i/ CVC" }
+      - { label: "Printable Worksheet URL", name: "worksheetUrl", widget: "string", required: false }
+      - { label: "Publish Date", name: "publishedDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Activity Instructions", name: "body", widget: "markdown" }
+
+  - name: "products"
+    label: "Digital Store (Payhip)"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Title", name: "title", widget: "string" }
+      - label: "Brand"
+        name: "brand"
+        widget: "select"
+        options:
+          - { label: "Fluent Voice with Imelda", value: "fluent-voice" }
+          - { label: "Play Sounds With Imelda", value: "play-sounds" }
+      - { label: "Display Price (e.g. $9 / ₦8,500)", name: "priceDisplay", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "File Format (e.g. PDF + MP3)", name: "format", widget: "string" }
+      - { label: "Payhip Product Code (e.g. ZjHXI)", name: "payhipId", widget: "string" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: true }
+      - { label: "Full Product Details", name: "body", widget: "markdown" }

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fluent Voice with Imelda (Umbrella Brand) */
+  --color-fv-primary: #0A3641;
+  --color-fv-secondary: #F4EADE;
+  --color-fv-accent: #E0A96D;
+  --color-fv-dark: #1C2A39;
+
+  /* Play Sounds With Imelda (Kids Phonics Sub-Brand) */
+  --color-ps-mint: #A2E8DD;
+  --color-ps-sky: #A0C4FF;
+  --color-ps-pink: #FFADAD;
+  --color-ps-yellow: #FDFFB6;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-kids: 'Fredoka', 'Nunito', system-ui, sans-serif;
+}

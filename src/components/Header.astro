@@ -1,0 +1,47 @@
+---
+interface Props {
+  brandMode?: 'fluent-voice' | 'play-sounds';
+}
+
+const { brandMode = 'fluent-voice' } = Astro.props;
+---
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-black/10">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+    <a href="/" class="flex items-center gap-2">
+      <span class="inline-block w-3 h-3 rounded-full bg-fv-accent"></span>
+      <span class="font-bold text-lg tracking-tight text-fv-primary">
+        Fluent Voice <span class="font-normal text-sm text-fv-dark/70">with Imelda</span>
+      </span>
+    </a>
+
+    <nav class="flex items-center gap-2 sm:gap-4 text-sm font-semibold">
+      <a
+        href="/"
+        class={`px-3 py-1.5 rounded-full transition ${
+          brandMode === 'fluent-voice'
+            ? 'bg-fv-primary text-white'
+            : 'text-fv-dark hover:bg-fv-secondary'
+        }`}
+      >
+        Fluent Voice
+      </a>
+      <a
+        href="/play-sounds"
+        class={`px-3 py-1.5 rounded-full font-kids transition ${
+          brandMode === 'play-sounds'
+            ? 'bg-ps-pink text-fv-dark shadow-xs'
+            : 'bg-ps-mint/50 text-fv-dark hover:bg-ps-mint'
+        }`}
+      >
+        Play Sounds (Kids)
+      </a>
+      <a
+        href="/store"
+        class="px-3 py-1.5 rounded-full bg-fv-accent/25 text-fv-primary hover:bg-fv-accent/40 transition"
+      >
+        Digital Store
+      </a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VideoCard from '../components/VideoCard.astro';
+import PayhipProductCard from '../components/PayhipProductCard.astro';
+
+const fvLessons = await getCollection('fluent-voice');
+const products = await getCollection('products');
+const featuredProducts = products.filter((p) => p.data.featured).slice(0, 3);
+---
+
+<BaseLayout title="Fluent Voice with Imelda | Spoken English & Early Phonics">
+  <!-- Hero Section -->
+  <section class="bg-fv-primary text-white py-16 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <span class="inline-block px-3 py-1 rounded-full bg-fv-accent/20 text-fv-accent text-xs font-bold uppercase tracking-wider mb-4">
+        Spoken English & Literacy Studio
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-4">
+        Speak Clearly, Confidently, and Naturally with Imelda
+      </h1>
+      <p class="text-fv-secondary/85 max-w-2xl mx-auto text-base sm:text-lg mb-8">
+        Practical British English pronunciation, accent clarity, and systematic synthetic phonics resources for learners, parents, and educators.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/store" class="px-6 py-3 rounded-xl bg-fv-accent text-fv-dark font-bold hover:opacity-90 transition">
+          Explore Digital Workbooks
+        </a>
+        <a href="/play-sounds" class="px-6 py-3 rounded-xl bg-ps-mint text-fv-dark font-kids font-bold hover:opacity-90 transition">
+          Visit Play Sounds (Kids 2–6) →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Play Sounds Sub-Brand Spotlight -->
+  <section class="max-w-6xl mx-auto px-4 -mt-8">
+    <div class="rounded-3xl bg-gradient-to-r from-ps-mint via-ps-sky/60 to-ps-pink/60 p-6 sm:p-8 border-2 border-white shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider bg-white/80 px-3 py-1 rounded-full text-fv-dark">
+          Early Childhood Literacy Vertical
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-kids text-fv-dark mt-2">
+          Play Sounds With Imelda
+        </h2>
+        <p class="text-fv-dark/80 text-sm sm:text-base max-w-xl mt-1">
+          Fun, musical CVC phonics adventures, short-vowel sound games, and printable practice sheets designed for children ages 2–6 and homeschooling families.
+        </p>
+      </div>
+      <a
+        href="/play-sounds"
+        class="shrink-0 px-6 py-3 rounded-2xl bg-fv-primary text-white font-kids font-bold hover:bg-fv-dark transition"
+      >
+        Open Kids Phonics Portal
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Lessons -->
+  <section class="max-w-6xl mx-auto px-4 mt-16">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold text-fv-primary">Latest Pronunciation Lessons</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {fvLessons.map((lesson) => (
+        <VideoCard {...lesson.data} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Digital Products -->
+  <section class="max-w-6xl mx-auto px-4 mt-16">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold text-fv-primary">Featured Workbooks & Audio Guides</h2>
+      <a href="/store" class="text-sm font-bold text-fv-primary underline">View All →</a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {featuredProducts.map((item) => (
+        <PayhipProductCard {...item.data} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

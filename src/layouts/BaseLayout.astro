@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  brandMode?: 'fluent-voice' | 'play-sounds';
+}
+
+const {
+  title,
+  description = 'Spoken English mastery, pronunciation clarity, and playful synthetic phonics with Imelda.',
+  brandMode = 'fluent-voice',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+  </head>
+  <body
+    class={brandMode === 'play-sounds'
+      ? 'bg-ps-yellow/30 text-fv-dark font-kids antialiased'
+      : 'bg-fv-secondary/40 text-fv-dark font-sans antialiased'}
+  >
+    <Header brandMode={brandMode} />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
