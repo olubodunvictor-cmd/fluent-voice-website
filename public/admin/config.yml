@@ -2,7 +2,7 @@ backend:
   name: github
   repo: olubodunvictor-cmd/fluent-voice-website
   branch: main
-  base_url: https://fluent-voice-auth.olubodunvictor.workers.workers.dev
+  base_url: https://fluent-voice-auth.olubodunvictor.workers.dev
   auth_endpoint: auth
 
 media_folder: "public/uploads"
