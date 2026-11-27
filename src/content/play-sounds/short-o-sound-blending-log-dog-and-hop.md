@@ -4,7 +4,7 @@ description: Practice the short /o/ sound with Imelda using log, dog, and hop in
   the video, followed by hands-on short /o/ worksheet practice for ages 2–6.
 youtubeId: u6_WGKJ7slk
 moduleTag: Short /o/ CVC
-publishedDate: 2026-11-27
+publishedDate: "2026-11-27"
 ---
 Watch the video to practice blending the short /o/ sound with \*\*log\*\*, \*\*dog\*\*, and \*\*hop\*\* out loud, then print the worksheet so your child can trace, match, and blend short /o/ words on paper.
 
