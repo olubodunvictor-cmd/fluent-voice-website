@@ -20,7 +20,7 @@ collections:
       - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
       - { label: "Topic / Accent Tag", name: "moduleTag", widget: "string", default: "Pronunciation" }
       - { label: "Free Guide Link (Optional)", name: "worksheetUrl", widget: "string", required: false }
-      - { label: "Publish Date", name: "publishedDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Publish Date", name: "publishedDate", widget: "string", default: "2026-11-27" }
       - { label: "Lesson Notes", name: "body", widget: "markdown" }
 
   - name: "play-sounds"
@@ -34,7 +34,7 @@ collections:
       - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
       - { label: "Phonics Rule / Vowel", name: "moduleTag", widget: "string", default: "Short /i/ CVC" }
       - { label: "Printable Worksheet URL", name: "worksheetUrl", widget: "string", required: false }
-      - { label: "Publish Date", name: "publishedDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Publish Date", name: "publishedDate", widget: "string", default: "2026-11-27" }
       - { label: "Activity Instructions", name: "body", widget: "markdown" }
 
   - name: "products"
